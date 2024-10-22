@@ -29,7 +29,8 @@ final class AppCoordinator: Coordinatable {
             MainScreenView<MainScreenViewModel>(
                 viewModel: MainScreenViewModel(
                     base32decoder: Base32Decoder(),
-                    otpGeneratorService: OTPGeneratorService()
+                    otpGeneratorService: OTPGeneratorService(),
+                    timeCounterService: TimeCounterService()
                 )
             )
         case .qrScanner:
