@@ -35,6 +35,7 @@ private extension OTPGeneratorService {
             guard (6...8).contains(initialData.numberOfDigits) else {
                 fatalError("Digits must be between 6 and 8.")
             }
+            
             let counter: UInt64 = UInt64(Date().timeIntervalSince1970 / initialData.period)
             let counterData = withUnsafeBytes(of: counter.bigEndian) { Data($0) }
             let hmac: Data
